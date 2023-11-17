@@ -1,0 +1,23 @@
+<div class="todo">
+    <h1 class="text-center my-5">My todo list</h1>
+
+    <div class="container  d-flex-column justify-content-center allign-items-center ">
+
+<div class="addInput my-5">
+    <input type="text">
+</div>
+
+<div class="box p-5">
+<ul class="list">
+    @for (item of todos; track item.id) {
+
+    <li class="d-flex justify-content-between">
+        <input type="checkbox">
+        <p> enter something</p>
+        <i class="bi bi-trash3"></i>
+    </li>
+}
+</ul>
+</div>
+</div>
+</div>
