@@ -1,20 +1,21 @@
 <div class="todo">
     <h1 class="text-center my-5">My todo list</h1>
 
-    <div class="container  d-flex-column justify-content-center allign-items-center ">
+    <div class="container  d-flex flex-column justify-content-center allign-items-center ">
 
-<div class="addInput my-5">
-    <input type="text">
+<div class="addinput my-4">
+<input class="inputAdd" type="text">&nbsp;
 </div>
-
-<div class="box p-5">
+<div class="box py-4">
 <ul class="list">
     @for (item of todos; track item.id) {
 
     <li class="d-flex justify-content-between">
-        <input type="checkbox">
-        <p> enter something</p>
-        <i class="bi bi-trash3"></i>
+        <input type="checkbox" class="" name="select" id="" value="1">
+        <p [ngClass]="item.completed ? 'compl strikethrough' : 'strikethrough'">{{item.completed ? " " :""}}{{item.title}}</p>
+        
+        <a data-mdb-toggle="tooltip" title="Remove" (click)="delete(item.id)"><i 
+            class="bi bi-trash text-danger"></i></a>
     </li>
 }
 </ul>
